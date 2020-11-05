@@ -8,12 +8,19 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.gridfs.GridFsTemplate;
+import org.springframework.web.bind.annotation.*;
+
 import java.io.IOException;
 import java.util.List;
 
 @RequestMapping("api")
 @RestController
 public class RESTController {
+
+    @Autowired
+    GridFsTemplate gridFsTemplate;
 
 
    //TODO inject components (TodoRepository and GridFsTemplate)
